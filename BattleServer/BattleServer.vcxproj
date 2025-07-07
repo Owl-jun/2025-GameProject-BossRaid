@@ -131,19 +131,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="defines.hpp" />
+    <ClInclude Include="GameRoomManager.hpp" />
+    <ClInclude Include="helpers.hpp" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="RedisManager.hpp" />
     <ClInclude Include="Server.hpp" />
     <ClInclude Include="Session.hpp" />
     <ClInclude Include="structs.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameRoomManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RedisManager.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="Session.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\config.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

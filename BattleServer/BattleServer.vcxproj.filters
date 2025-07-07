@@ -16,7 +16,18 @@
     <ClInclude Include="structs.hpp">
       <Filter>etc</Filter>
     </ClInclude>
-    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Player.hpp">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRoomManager.hpp">
+      <Filter>GameRoom</Filter>
+    </ClInclude>
+    <ClInclude Include="RedisManager.hpp">
+      <Filter>NetworkIO</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.hpp">
+      <Filter>etc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -28,7 +39,15 @@
     <ClCompile Include="Session.cpp">
       <Filter>NetworkIO</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRoomManager.cpp">
+      <Filter>GameRoom</Filter>
+    </ClCompile>
+    <ClCompile Include="RedisManager.cpp">
+      <Filter>NetworkIO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -37,5 +56,14 @@
     <Filter Include="NetworkIO">
       <UniqueIdentifier>{6d39191a-cfa4-47e2-beba-6835e58df6a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{cb5d8d1b-3077-4085-a07c-595cc26888b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameRoom">
+      <UniqueIdentifier>{2d136b7a-cdb3-4337-8331-86022dff344b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\config.json" />
   </ItemGroup>
 </Project>

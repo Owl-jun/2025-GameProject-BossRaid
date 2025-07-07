@@ -15,11 +15,13 @@
 #include <atomic>
 #include <chrono>
 #include <ctime>
+#include <optional>
 
 
 
 #include <asio.hpp>
 #include <asio/ssl.hpp>
+#include <nlohmann/json.hpp>
 
-
+using json = nlohmann::json;
 using asio::ip::tcp;
