@@ -130,6 +130,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BattleRoom.hpp" />
+    <ClInclude Include="Boss.hpp" />
     <ClInclude Include="defines.hpp" />
     <ClInclude Include="GameRoomManager.hpp" />
     <ClInclude Include="helpers.hpp" />
@@ -139,9 +141,13 @@
     <ClInclude Include="Server.hpp" />
     <ClInclude Include="Session.hpp" />
     <ClInclude Include="structs.hpp" />
+    <ClInclude Include="Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BattleRoom.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="GameRoomManager.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>

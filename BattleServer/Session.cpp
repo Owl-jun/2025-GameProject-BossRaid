@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "Session.hpp"
 #include "Player.hpp"
+#include "Session.hpp"
 
 Session::Session(std::shared_ptr<asio::ssl::stream<tcp::socket>> stream)
 	: ssl_stream(std::move(stream))
@@ -8,6 +8,10 @@ Session::Session(std::shared_ptr<asio::ssl::stream<tcp::socket>> stream)
 	, player()
 {
 
+}
+
+void Session::start()
+{
 }
 
 void Session::enqueue(uint8_t opcode, std::string msg)

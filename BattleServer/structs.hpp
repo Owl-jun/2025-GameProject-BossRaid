@@ -27,3 +27,7 @@ struct P_STATE
 	bool isCasting = false;
 };
 
+struct P_INPUT
+{
+
+};

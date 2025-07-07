@@ -17,7 +17,7 @@
       <Filter>etc</Filter>
     </ClInclude>
     <ClInclude Include="Player.hpp">
-      <Filter>Player</Filter>
+      <Filter>Unit</Filter>
     </ClInclude>
     <ClInclude Include="GameRoomManager.hpp">
       <Filter>GameRoom</Filter>
@@ -26,6 +26,15 @@
       <Filter>NetworkIO</Filter>
     </ClInclude>
     <ClInclude Include="helpers.hpp">
+      <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleRoom.hpp">
+      <Filter>GameRoom</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.hpp">
+      <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
       <Filter>etc</Filter>
     </ClInclude>
   </ItemGroup>
@@ -40,7 +49,7 @@
       <Filter>NetworkIO</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Player</Filter>
+      <Filter>Unit</Filter>
     </ClCompile>
     <ClCompile Include="GameRoomManager.cpp">
       <Filter>GameRoom</Filter>
@@ -48,6 +57,13 @@
     <ClCompile Include="RedisManager.cpp">
       <Filter>NetworkIO</Filter>
     </ClCompile>
+    <ClCompile Include="BattleRoom.cpp">
+      <Filter>GameRoom</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -56,11 +72,11 @@
     <Filter Include="NetworkIO">
       <UniqueIdentifier>{6d39191a-cfa4-47e2-beba-6835e58df6a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Player">
-      <UniqueIdentifier>{cb5d8d1b-3077-4085-a07c-595cc26888b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameRoom">
       <UniqueIdentifier>{2d136b7a-cdb3-4337-8331-86022dff344b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit">
+      <UniqueIdentifier>{cb5d8d1b-3077-4085-a07c-595cc26888b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

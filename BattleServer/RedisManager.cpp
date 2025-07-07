@@ -1,7 +1,7 @@
 #include "pch.h"
+#include <hiredis/hiredis.h>
 #include "helpers.hpp"
 #include "RedisManager.hpp"
-#include <hiredis/hiredis.h>
 
 
 struct RedisReplyDeleter {
