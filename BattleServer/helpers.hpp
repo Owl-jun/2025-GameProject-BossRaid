@@ -1,5 +1,5 @@
 #pragma once
-
+#include "structs.hpp"
 #include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -24,4 +24,9 @@ bool get_json(json& ctx)
     }
 
     return true;
+}
+
+inline float Distance(const P_POS& a, const P_POS& b)
+{
+    return std::sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
