@@ -3,7 +3,28 @@
     "IP": "127.0.0.1",
     "PORT": 6379,
     "SUB": {
-      "CR_ROOM" :  "battle:room"
+      "CR_ROOM": "battle:room"
     }
   }
 }
+
+// key : battle:room  // subs battle:room packet example
+//{
+//  "cmd": "create",
+//  "room_id": "room_01",
+//  "token": "abc123",
+//  "players": [
+//    {
+//      "id": "user1",
+//      "name": "Alice"
+//    },
+//    {
+//      "id": "user2",
+//      "name": "Bob"
+//    },
+//    {
+//      "id": "user3",
+//      "name": "Carol"
+//    }
+//  ]
+//}

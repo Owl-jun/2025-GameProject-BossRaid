@@ -4,7 +4,7 @@ class Session : public std::enable_shared_from_this<Session>
 {
 private:
 	std::shared_ptr<asio::ssl::stream<tcp::socket>> ssl_stream;
-	std::mutex mutex_write_queue;
+	asio::strand<asio::any_io_executor> strand_;
 	std::queue<std::string> write_queue;
 
 	Player player;

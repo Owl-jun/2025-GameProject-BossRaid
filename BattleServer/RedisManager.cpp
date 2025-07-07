@@ -136,8 +136,19 @@ void RedisManager::StopSubscriber()
 void RedisManager::HandleMsg(const std::string& msg)
 {
     json jsonctx = json::parse(msg);
-    int opcode = jsonctx.value("oper", -1);
-    std::string username = jsonctx["UserState"].value("UserName", "NotFound");
-    std::cout << "RedisManager opcode : " << opcode << std::endl;
-    std::cout << "RedisManager username : " << username << std::endl;
+    std::string cmd = jsonctx["cmd"].get<std::string>();
+    std::string room_id = jsonctx["room_id"].get<std::string>();
+    std::string token = jsonctx["token"].get<std::string>();
+    std::vector<std::pair<std::string, std::string>> players;
+    
+    for (const auto& p : jsonctx["players"])
+    {
+        std::string id = p["id"].get<std::string>();
+        std::string name = p["name"].get<std::string>();
+        players.emplace_back(id, name);
+    }
+    if (cmd == "create")
+    {
+        // TO DO CREATE GAMEROOM
+    }
 }
