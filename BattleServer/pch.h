@@ -16,7 +16,7 @@
 #include <chrono>
 #include <ctime>
 #include <optional>
-
+#include <functional>
 
 
 #include <asio.hpp>

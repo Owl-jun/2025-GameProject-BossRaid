@@ -23,10 +23,10 @@ private:
 	void CheckBattleEnd();
 
 private:
-	std::string roomId;
+	std::string roomId_;
 	bool isBattleStarted = false;
 
-	std::unordered_map<int, std::shared_ptr<Player>> players_;
+	std::vector<std::shared_ptr<Player>> players_;
 	std::shared_ptr<Boss> boss_;
 
 	float syncTimer = 0.0f;
