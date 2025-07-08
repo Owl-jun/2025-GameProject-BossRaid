@@ -31,8 +31,13 @@ private:
 	P_STATE STATE;
 
 	bool canMove_ = true;
+	float GetSkillCooldown(int skillId) const;
 
 	std::queue<P_INPUT> inputQueue;
+	std::unordered_map<int, SkillInfo> skills_;
+
+	void InitializeSkills();
+	bool TryUseSkill(int skillId);
 public:
 	Player(std::string id, std::shared_ptr<Session> session);
 };

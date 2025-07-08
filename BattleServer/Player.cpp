@@ -3,6 +3,39 @@
 #include "Session.hpp"
 #include "structs.hpp"
 
+float Player::GetSkillCooldown(int skillId) const
+{
+	switch (skillId)
+	{
+		case 1: return 2.f;
+		case 2: return 5.f;
+		default: return 1.f;
+	}
+}
+
+void Player::InitializeSkills()
+{
+	skills_.clear();
+
+	skills_[1] = SkillInfo(1, 0.5f);
+	skills_[2] = SkillInfo(2, 5.f);
+}
+
+bool Player::TryUseSkill(int skillId)
+{
+	auto it = skills_.find(skillId);
+	if (it == skills_.end()) return false;
+
+	auto& skill = it->second;
+
+	if (skill.currentCooldown > 0.f) return false;
+
+	skill.currentCooldown = skill.baseCooldown;
+	skill.isCasting = true;
+
+	return true;
+}
+
 Player::Player(std::string id, std::shared_ptr<Session> session)
 	: id_(id)
 	, session_(session)
@@ -32,14 +65,26 @@ void Player::Update(float deltaTime)
 		case MoveDir::RIGHT:	POS.x += deltaTime * 3.f; break;
 		default: break;
 	}
+	
+	for (auto& [id, skill] : skills_)
+	{
+		if (skill.currentCooldown > 0.f)
+		{
+			skill.currentCooldown -= deltaTime;
+		}
+	}
 
 	if (input.castPressed) {
-		STATE.isCasting = true;
-		// Skill ID -> Send FSM Event
+		if (TryUseSkill(input.skillId))
+		{
+
+		}
+		else
+		{
+
+		}
 	}
-	else {
-		STATE.isCasting = false;
-	}
+
 }
 
 void Player::ApplyDamage(int amount)

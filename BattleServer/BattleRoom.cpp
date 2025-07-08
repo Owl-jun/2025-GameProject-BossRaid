@@ -33,7 +33,19 @@ void BattleRoom::Start()
 
 void BattleRoom::Update(float deltaTime)
 {
+	if (!isBattleStarted) return;
 
+	ProcessP_Input(deltaTime);
+	UpdateBossAI(deltaTime);
+
+	syncTimer += deltaTime;
+	if (syncTimer >= syncInterval)
+	{
+		BroadcastState();
+		syncTimer = 0.f;
+	}
+
+	CheckBattleEnd();
 }
 
 void BattleRoom::HandleInput(std::string player_id, const P_INPUT& input)
@@ -43,7 +55,10 @@ void BattleRoom::HandleInput(std::string player_id, const P_INPUT& input)
 
 void BattleRoom::ProcessP_Input(float deltaTime)
 {
-
+	for (auto& player : players_)
+	{
+		player->Update(deltaTime);
+	}
 }
 
 void BattleRoom::UpdateBossAI(float deltaTime)
