@@ -30,3 +30,8 @@ inline float Distance(const P_POS& a, const P_POS& b)
 {
     return std::sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
+
+inline std::string MakePacket(uint8_t opcode, std::string msg)
+{
+    return std::string();
+}
