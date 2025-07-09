@@ -14,12 +14,12 @@ void Session::enqueue(uint8_t opcode, std::string msg)
 {
 	auto self = shared_from_this();
 	asio::post(strand_, [this, self, opcode, msg]() {
-		std::string packet = MakePacket(opcode, msg);
-		write_queue_.push(packet);
-		if (write_queue_.size() == 1)
-		{
-			do_write();
-		}
+			std::string packet = MakePacket(opcode, msg);
+			write_queue_.push(packet);
+			if (write_queue_.size() == 1)
+			{
+				do_write();
+			}
 		}
 	);
 }
